@@ -1,0 +1,83 @@
+<div class="card bg-dark text-white">
+  <div class="card-header">{{ titulo }}</div>
+  <div class="card-body">
+
+    <form #cursoForm="ngForm">
+
+      <div class="form-group row">
+        <label for="" class="col-form-label col-sm-2">Nombre del Curso</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" name="nombre" placeholder="Nombre del curso" #nombre required ><!-- -->
+
+          <div class="alert alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+            <div *ngIf="nombre.errors.required">
+              Nombre del curso es Requerido.
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="" class="col-form-label col-sm-2">Desripcion:</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" name="descripcion" placeholder="Descripcion" #descripcion required><!-- required-->
+
+          <div class="alert alert-danger" *ngIf="descripcion.invalid && (descripcion.dirty || descripcion.touched)">
+
+            <div *ngIf="descripcion.errors.required">
+              Descripcion es Requerido.
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="" class="col-form-label col-sm-2">Docente:</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" name="docente" placeholder="Docente" #docente required><!-- required email-->
+
+          <div class="alert alert-danger" *ngIf="docente.invalid && (docente.dirty || docente.touched)">
+            <div *ngIf="docente.errors.required">
+              Docente es Requerido.
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="createAt" class="col-form-label col-sm-2">Fecha Inicio</label>
+        <div class="col-sm-6">
+          <input class="form-control" style="display:inline; width:140px;" [matDatepicker]="myDatepicker" name="fechaInicio" placeholder="Eliga una fecha">
+          <mat-datepicker-toggle [for]="myDatepicker"></mat-datepicker-toggle>
+          <mat-datepicker #myDatepicker></mat-datepicker>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="region" class="col-form-label col-sm-2">Duracion:</label>
+        <div class="col-sm-6">
+          <select class="form-control" style=" width:400px;" name="region">
+            <option [ngValue]="undefined">-----Selecciona una opción-----</option>
+            <option >10 hrs</option>
+            <option >20 hrs</option>
+            <option >30 hrs</option>
+            <option >40 hrs</option>
+            <option >50 hrs</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-sm-6">
+          <button class="btn btn-primary" role="button" name="button"  [disabled]="!cursoForm.form.valid">
+            Crear Curso
+          </button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
