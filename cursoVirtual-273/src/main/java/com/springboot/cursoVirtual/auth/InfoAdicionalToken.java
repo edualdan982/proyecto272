@@ -11,7 +11,9 @@ import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.security.oauth2.provider.token.TokenEnhancer;
 import org.springframework.stereotype.Component;
 
-import com.springboot.cursoVirtual.models.services.IUsuarioService;
+
+
+import com.springboot.cursoVirtual.models.servicesImpl.IUsuarioService;
 
 @Component
 public class InfoAdicionalToken implements TokenEnhancer{

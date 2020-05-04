@@ -57,11 +57,11 @@ public class Usuario implements Serializable {
                 @UniqueConstraint(columnNames = {"usuario_id", "rol_id"})})
     private List<Rol> roles;
     
-    @OneToMany
-    private Set<MensajeMaterial> mensajeMateria;
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<MensajeMaterial> mensaje_materia;
     
-    @OneToMany
-    private Set<MensajeParalelo> mensajeParalelo;
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<MensajeParalelo> mensaje_paralelo;
     
     private static final long serialVersionUID = 1L;
 
@@ -108,19 +108,19 @@ public class Usuario implements Serializable {
 	}
 
 	public Set<MensajeMaterial> getMensajeMateria() {
-		return mensajeMateria;
+		return mensaje_materia;
 	}
 
 	public void setMensajeMateria(Set<MensajeMaterial> mensajeMateria) {
-		this.mensajeMateria = mensajeMateria;
+		this.mensaje_materia = mensajeMateria;
 	}
 
 	public Set<MensajeParalelo> getMensajeParalelo() {
-		return mensajeParalelo;
+		return mensaje_paralelo;
 	}
 
 	public void setMensajeParalelo(Set<MensajeParalelo> mensajeParalelo) {
-		this.mensajeParalelo = mensajeParalelo;
+		this.mensaje_paralelo = mensajeParalelo;
 	}
    
     

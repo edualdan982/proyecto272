@@ -1,5 +1,7 @@
 <div class="card bg-dark text-white">
-  <div class="card-header">{{ titulo }}</div>
+  <div class="card-header">
+    <h2>{{ titulo }}</h2>
+  </div>
   <div class="card-body">
 
     <form #cursoForm="ngForm">
@@ -7,7 +9,7 @@
       <div class="form-group row">
         <label for="" class="col-form-label col-sm-2">Nombre del Curso</label>
         <div class="col-sm-6">
-          <input type="text" class="form-control" name="nombre" placeholder="Nombre del curso" #nombre required ><!-- -->
+          <input type="text" class="form-control" name="nombre" placeholder="Nombre del curso" [(ngModel)]="curso.nombre" #nombre=ngModel required><!-- -->
 
           <div class="alert alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
             <div *ngIf="nombre.errors.required">
@@ -21,7 +23,7 @@
       <div class="form-group row">
         <label for="" class="col-form-label col-sm-2">Desripcion:</label>
         <div class="col-sm-6">
-          <input type="text" class="form-control" name="descripcion" placeholder="Descripcion" #descripcion required><!-- required-->
+          <input type="text" class="form-control" name="descripcion" placeholder="Descripcion" [(ngModel)]="curso.descripcion" #descripcion=ngModel required><!-- required-->
 
           <div class="alert alert-danger" *ngIf="descripcion.invalid && (descripcion.dirty || descripcion.touched)">
 
@@ -68,11 +70,11 @@
             <option >50 hrs</option>
           </select>
         </div>
-      </div>
+      </div>-->
 
       <div class="form-group row">
         <div class="col-sm-6">
-          <button class="btn btn-primary" role="button" name="button"  [disabled]="!cursoForm.form.valid">
+          <button class="btn btn-primary" role="button" name="button"  [disabled]="cursoForm.form.valid">
             Crear Curso
           </button>
         </div>

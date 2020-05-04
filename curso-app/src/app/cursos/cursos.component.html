@@ -1,64 +1,32 @@
-<div class="card border-primary mb-3">
-  <div class="card-header text-bold">
-    <h2>CURSOS</h2>
+<div class="card bg-dark text-white">
+  <img class="card-img" src="assets/images/fondo.jpg" alt="Card image cap" height="250">
+  <div class="card-img-overlay">
+    <h1 class="card-title">CURSOS VIRTUALES</h1>
+    <p class="card-text">Desde esta plataforma podra acceder a varios curso virtuales.</p>
+    <p class="card-text">Bienvenido</p>
+    <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/curso/form']">Añadir Curso</button>
+    <span class="glyphicon glyphicon-align-left"></span>
   </div>
-  <div class="card-body text-primary">
-    <h3 class="card-title">Listado de Cursos</h3>
-    <div class="my-2 text-left">
-
-      <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/curso/form']">Añadir Curso</button>
-      <span class="glyphicon glyphicon-align-left"></span>
+</div>
+<div class="container-fluid ">
+  <div class="row row-cols-4">
+    <div *ngFor="let curso of cursos" class="card bg-dark text-white" style="width: 20rem;">
+      <div class="card-body">
+        <h3 class="card-title mb-2">{{ curso.nombre}}</h3>
+        <p class="card-text">{{ curso.descripcion}}</p>
+        <div class="row">
+          <div class="bg dark">
+            <div class=" p-1">
+              <a class=" btn btn-primary btn-sm" type="button" name="inscribir">Inscribir</a>
+            </div>
+          </div>
+          <div class="bg-dark">
+            <div class="p-1">
+              <a class="btn btn-danger btn-sm" type="button" name="eliminar">Eliminar</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <table class="table table-striped table-bordered text-info">
-      <thead>
-        <tr>
-          <th>NOMBRE DEL CURSO</th>
-          <th>DECRIPCION</th>
-          <th>DOCENTE</th>
-          <th>DURACION</th>
-          <th>FECHA_INICIO</th>
-          <th>INSCRIBIR</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td> Spring Boot con Agunlar Cli</td>
-          <td>En el curso se llevara a cabo lo que es la parte de implementacion y concexion de una servidor y una vista con paginas web.</td>
-          <td>Profesor: Luis Miguel Soza</td>
-          <td>40 horas</td>
-          <td>02/JUNIO/2020</td>
-          <td>
-            <button type="button" name="editar" class="btn btn-primary btn-sm">INSCRIBIRME</button>
-          </td>
-        <tr>
-          <td> Spring Boot con Agunlar Cli</td>
-          <td>En el curso se llevara a cabo lo que es la parte de implementacion y concexion de una servidor y una vista con paginas web.</td>
-          <td>Profesor: Luis Miguel Soza</td>
-          <td>40 horas</td>
-          <td>02/JUNIO/2020</td>
-          <td>
-            <button type="button" name="editar" class="btn btn-primary btn-sm">INSCRIBIRME</button>
-          </td>
-        <tr>
-          <td> Spring Boot con Agunlar Cli</td>
-          <td>En el curso se llevara a cabo lo que es la parte de implementacion y concexion de una servidor y una vista con paginas web.</td>
-          <td>Profesor: Luis Miguel Soza</td>
-          <td>40 horas</td>
-          <td>02/JUNIO/2020</td>
-          <td>
-            <button type="button" name="editar" class="btn btn-primary btn-sm">INSCRIBIRME</button>
-          </td>
-        <tr>
-          <td> Spring Boot con Agunlar Cli</td>
-          <td>En el curso se llevara a cabo lo que es la parte de implementacion y concexion de una servidor y una vista con paginas web.</td>
-          <td>Profesor: Luis Miguel Soza</td>
-          <td>40 horas</td>
-          <td>02/JUNIO/2020</td>
-          <td>
-            <button type="button" name="editar" class="btn btn-primary btn-sm">INSCRIBIRME</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
   </div>
 </div>

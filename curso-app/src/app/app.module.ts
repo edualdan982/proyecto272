@@ -14,10 +14,10 @@ import { FormComponent } from './clientes/form.component';
 import { PaginatorComponent } from './paginator/paginator.component';
 
 import { ClienteService } from './clientes/cliente.service';
+import { CursoService } from './cursos/curso.service';
+
 import { RouterModule, Routes } from '@angular/router';
-
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
 import { FormsModule } from '@angular/forms';
 
 import { registerLocaleData } from '@angular/common';
@@ -35,7 +35,7 @@ registerLocaleData(localeES, 'es');
 
 const routes: Routes = [
   { path: '', redirectTo: '/cursos', pathMatch: 'full' },
-  { path: 'cursos', component: CursosComponent },
+  { path: 'cursos', component: CursosComponent},
   { path: 'directivas', component: DirectivaComponent },
   { path: 'clientes', component: ClientesComponent },
   { path: 'clientes/page/:page', component: ClientesComponent },
@@ -69,10 +69,10 @@ const routes: Routes = [
     MatDatepickerModule
 
   ],
-  providers: [ClienteService,
-  { provide: LOCALE_ID, useValue: 'es-BO' },
-  { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
-  { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }],
+  providers: [ CursoService ,ClienteService,
+    { provide: LOCALE_ID, useValue: 'es-BO' },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

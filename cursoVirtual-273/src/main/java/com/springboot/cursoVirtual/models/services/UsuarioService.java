@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.springboot.cursoVirtual.models.dao.IUsuarioDao;
 import com.springboot.cursoVirtual.models.entity.Usuario;
+import com.springboot.cursoVirtual.models.servicesImpl.IUsuarioService;
 
 
 @Service
